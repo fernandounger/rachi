@@ -1,0 +1,506 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0F9AFE;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background-color: #EFF8FF;
+}
+body header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #EFF8FF;
+  padding: 1.2rem 1rem;
+}
+body header .header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .header__container .header__logo {
+  position: relative;
+  z-index: 100;
+}
+body header .header__container .header__logo a {
+  font: 700 1.5rem Sora, sans-serif;
+  color: #293145;
+}
+body header .header__container .header__menu {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  body header .header__container .header__menu {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    padding: 100px 20px;
+    transition: 0.3s ease-in-out;
+    background: #FFFFFF;
+  }
+}
+body header .header__container .header__menu .menu__item a {
+  color: #6E7275;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.875rem, 0.7679rem + 0.4762vw, 1.125rem);
+  position: relative;
+}
+body header .header__container .header__menu .menu__item a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #6E7275;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+body header .header__container .header__menu .menu__item a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+body header .header__container .menuhamburguer {
+  display: none;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  body header .header__container .menuhamburguer {
+    z-index: 999;
+    display: block;
+  }
+}
+body header .header__container .active {
+  left: 0;
+}
+body section {
+  padding: 1.8rem 1rem;
+}
+body section .working__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 800px) {
+  body section .working__container {
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+body section .working__container .content__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+body section .working__container h1, body section .working__container h2 {
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: #293145;
+  font-size: clamp(1.5rem, 1.0364rem + 2.1818vw, 3rem);
+}
+body section .working__container .working__btn {
+  text-align: center;
+  background: #0F9AFE;
+  color: #FFFFFF;
+  box-shadow: 1px 3px 4px rgba(19, 125, 224, 0.5);
+  padding: 14px 36px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  width: fit-content;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  body section .working__container .working__btn {
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+body section .working__container .working__image {
+  max-width: 500px;
+}
+body section .working__container .working__image img {
+  width: 100%;
+}
+body .works__container {
+  text-align: center;
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body .works__container .works__title h2 {
+  font-size: clamp(1.5rem, 1.0446rem + 2.0238vw, 2.5625rem);
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: #293145;
+}
+body .works__container .works__card {
+  padding: 4.5rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-evenly;
+}
+body .works__container .card {
+  max-width: 220px;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 99;
+}
+body .works__container .card .card__image {
+  margin-bottom: 1.2rem;
+}
+body .works__container .card .card__title {
+  font-family: "Sora", sans-serif;
+  color: #293145;
+  margin-bottom: 0.4rem;
+}
+body .works__container .card .card__paragraph {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+  color: #6E7275;
+}
+body .plans__container {
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+body .plans__container .content__text {
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+body .plans__container .content__text h3 {
+  font-size: clamp(1.5rem, 1.0446rem + 2.0238vw, 2.5625rem);
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  color: #293145;
+  margin-bottom: 1rem;
+}
+body .plans__container .content__text p {
+  font-weight: 400;
+  color: #6E7275;
+  font-family: "Inter", sans-serif;
+  line-height: 25px;
+  font-size: clamp(0.875rem, 0.7946rem + 0.3571vw, 1.0625rem);
+}
+body .plans__container .plans__cards {
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
+}
+body .plans__container .plans__cards .card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #293145;
+  height: 470px;
+  justify-content: space-around;
+  max-width: 340px;
+  padding: 35px;
+  text-align: center;
+  border-radius: 8px;
+}
+body .plans__container .plans__cards .card:hover {
+  transition: 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+body .plans__container .plans__cards .card h4 {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+body .plans__container .plans__cards .card .card__price {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+body .plans__container .plans__cards .card .card__price .card__price--coin {
+  font-size: 20px;
+  margin-top: 10px;
+}
+body .plans__container .plans__cards .card .card__price .card__price--value {
+  font-size: 50px;
+}
+body .plans__container .plans__cards .card .card__price .card__price--month {
+  margin-top: 20px;
+  font-size: 26px;
+}
+body .plans__container .plans__cards .card .card__paragraph {
+  width: 300px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #6E7275;
+  font-size: clamp(1rem, 0.9464rem + 0.2381vw, 1.125rem);
+}
+body .plans__container .plans__cards .card .card__btnplan {
+  color: #FFFFFF;
+  border-radius: 50px;
+  background-color: #0F9AFE;
+  box-shadow: 1px 3px 10px rgba(17, 37, 56, 0.5);
+  padding: 12px 80px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  border: 1px;
+  transition: 400ms ease-in-out;
+}
+body .plans__container .plans__cards .card .card__btnplan:hover {
+  transition: 400ms ease-in-out;
+  background: transparent;
+  color: #293145;
+  border: 1px solid #293145;
+}
+body .plans__container .plans__cards .card-preferred {
+  color: #FFFFFF;
+  background: #293145;
+}
+body .plans__container .plans__cards .card-preferred h4 {
+  font-size: clamp(1.5rem, 1.2857rem + 0.9524vw, 2rem);
+  margin-bottom: 1rem;
+}
+body .plans__container .plans__cards .card-preferred span {
+  font-weight: 500;
+  border-radius: 15px;
+  font-family: "Inter", sans-serif;
+  padding: 5px 32px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  background-color: #0F9AFE;
+}
+body .plans__container .plans__cards .card-preferred .card__paragraph {
+  color: #DBDBDB;
+}
+body .plans__container .plans__cards .card-preferred .card__btnplan:hover {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+body .download__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+@media (max-width: 800px) {
+  body .download__container {
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+body .download__container .content__title {
+  font-size: clamp(1.5rem, 1.2857rem + 0.9524vw, 2rem);
+  font-family: "Sora", sans-serif;
+  color: #293145;
+  font-weight: 600;
+}
+@media (max-width: 500px) {
+  body .download__container .content__title {
+    text-align: center;
+  }
+}
+body .download__container .content__paragraph {
+  max-width: 444px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+  color: #6E7275;
+  line-height: 26px;
+  margin: 28px 0;
+}
+@media (max-width: 800px) {
+  body .download__container .content__paragraph {
+    text-align: center;
+    margin: 28px auto;
+  }
+}
+body .download__container .download__app {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 800px) {
+  body .download__container .download__app {
+    justify-content: center;
+  }
+}
+body .download__container .download__app--google, body .download__container .download__app--store {
+  display: flex;
+  align-items: center;
+  padding: 1.8rem 1.2rem;
+  max-height: 60px;
+  background: #293145;
+  color: #FFFFFF;
+  border-radius: 10px;
+  width: fit-content;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  gap: 1rem;
+}
+@media (max-width: 500px) {
+  body .download__container .download__app--google, body .download__container .download__app--store {
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+  }
+}
+body .download__container .download__app--google img, body .download__container .download__app--store img {
+  max-width: 25px;
+}
+body .download__container .download__app--google span, body .download__container .download__app--store span {
+  font-size: clamp(0.5625rem, 0.4821rem + 0.3571vw, 0.75rem);
+}
+body .download__container .download__app--google h4, body .download__container .download__app--store h4 {
+  font-weight: 400;
+  font-size: clamp(0.6875rem, 0.2857rem + 1.7857vw, 1.625rem);
+}
+body .download__container .image__notifications {
+  max-width: 450px;
+}
+@media (max-width: 500px) {
+  body .download__container .image__notifications {
+    display: none;
+  }
+}
+body .download__container .image__notifications img {
+  width: 100%;
+}
+body .banner__footer {
+  background-image: url("../img/contact.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+body .contact__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+body .contact__container h4 {
+  color: #FFFFFF;
+  font-size: clamp(1.5rem, 1.0714rem + 1.9048vw, 2.5rem);
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+body .contact__container p {
+  font-weight: 400;
+  color: #DBDBDB;
+  font-family: "Inter", sans-serif;
+  line-height: 25px;
+  max-width: 450px;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+}
+body .contact__container form {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  body .contact__container form {
+    flex-direction: column;
+  }
+}
+body .contact__container input {
+  padding: 10px 0;
+  background-color: transparent;
+  border-bottom: 1px solid #FFFFFF;
+  color: #DBDBDB;
+  width: 100%;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+body .contact__container input:focus {
+  border-bottom: 1px solid #0F9AFE;
+  transition: 0.2s ease-in-out;
+}
+body .contact__container input:focus::placeholder {
+  transition: 0.4s ease-in-out;
+  font-size: 15px;
+}
+body .contact__container input::placeholder {
+  font-size: 18px;
+  color: #DBDBDB;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+body .contact__container button {
+  background: #0F9AFE;
+  color: #FFFFFF;
+  box-shadow: 1px 3px 4px rgba(19, 125, 224, 0.5);
+  padding: 8px 32px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+@media (max-width: 500px) {
+  body .contact__container button {
+    width: 100%;
+  }
+}
+body .footer {
+  font-family: "Sora", sans-serif;
+  font-weight: 400;
+  color: #293145;
+  padding: 20px;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem);
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
