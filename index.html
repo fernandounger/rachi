@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Fernando Unger">
+    <meta name="description" content="Landing Page - Rachi - Desafio Codelândia">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/img/rachi.png" type="image/x-icon">
+    <title>Rachi - Codelândia</title>
+</head>
+
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="./assets/img/rachi.png" alt="Logo Rachi">
+                <a href="#">Rachi</a>
+            </div>
+            <nav>
+                <ul class="header__menu">
+                    <li class="menu__item"><a href="#Funcionalidades">Funcionalidades</a></li>
+                    <li class="menu__item"><a href="#App">App</a></li>
+                    <li class="menu__item"><a href="#Planos">Planos</a></li>
+                    <li class="menu__item"><a href="#Contato">Contato</a></li>
+                </ul>
+            </nav>
+            <img src="./assets/img/menuhamburguer.png" class="menuhamburguer active" alt="image menuhamburguer">
+        </div>
+    </header>
+    <main>
+
+        <section>
+            <div class="working__container">
+                <div class="working__content">
+                    <div class="content__texts">
+                        <div>
+                            <h1>
+                                Rachi,
+                            </h1>
+                            <h2>
+                                é tudo que você
+                            </h2>
+                            <h2>
+                                precisa em um só lugar.
+                            </h2>
+                        </div>
+
+                        <button class="working__btn">Cadastrar-se</button>
+                    </div>
+                </div>
+                <div class="working__image" data-aos="fade-left" data-aos-duration="1200">
+                    <img src="./assets/img/working.png" alt="image working">
+                </div>
+            </div>
+        </section>
+        <section id="Funcionalidades">
+            <div class="works__container">
+                <div class="works__title">
+                    <h2>Como funciona</h2>
+                </div>
+                <div class="works__card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                        <div class="card__image">
+                            <img src="./assets/img/icons/iconconexoes.png" alt="icon conexoes">
+                        </div>
+                        <div>
+                            <h3 class="card__title">Crie conexões</h3>
+                            <p class="card__paragraph">Lorem ipsum dolor sit amet, consecteteu.</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                        <div class="card__image">
+                            <img src="./assets/img/icons/icongratuito.png" alt="icon gratuito">
+                        </div>
+                        <div>
+                            <h3 class="card__title">100% gratuito</h3>
+                            <p class="card__paragraph">Lorem ipsum dolor sit amet, consecteteu.</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="1000">
+                        <div class="card__image">
+                            <img src="./assets/img/icons/iconcompartilhamento.png" alt="icon compartilhamente">
+                        </div>
+                        <div>
+                            <h3 class="card__title">Compartilhamento</h3>
+                            <p class="card__paragraph">Lorem ipsum dolor sit amet, consecteteu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Planos">
+            <div class="plans__container">
+                <div class="content__text">
+                    <h3>Nossos Planos</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi quis euismod ultrices.
+                    </p>
+                </div>
+                <div class="plans__cards">
+                    <div class="card">
+                        <div>
+                            <h4>Bronze</h4>
+                        </div>
+                        <div class="card__price">
+                            <sup class="card__price--coin">R$</sup>
+                            <p class="card__price--value">28</p>
+                            <p class="card__price--month">/mês</p>
+                        </div>
+                        <p class="card__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                            lacinia mi quis euismod ultrices.</p>
+                        <button class="card__btnplan">Assinar</button>
+
+                    </div>
+                    <div class="card card-preferred">
+                        <div>
+                            <h4>Prata</h4>
+                            <span>PREFERIDO</span>
+                        </div>
+                        <div class="card__price">
+                            <sup class="card__price--coin">R$</sup>
+                            <p class="card__price--value">57</p>
+                            <p class="card__price--month">/mês</p>
+                        </div>
+                        <p class="card__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                            lacinia mi quis euismod ultrices.</p>
+                        <button class="card__btnplan">Assinar</button>
+
+                    </div>
+                    <div class="card">
+                        <div>
+                            <h4>Ouro</h4>
+                        </div>
+                        <div class="card__price">
+                            <sup class="card__price--coin">R$</sup>
+                            <p class="card__price--value">94</p>
+                            <p class="card__price--month">/mês</p>
+                        </div>
+                        <p class="card__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                            lacinia mi quis euismod ultrices.</p>
+                        <button class="card__btnplan">Assinar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="App">
+            <div class="download__container">
+                <div class="download__content">
+                    <div class="content__text">
+                        <h2 class="content__title">Baixe nosso app para desfrutar mais!</h2>
+                        <p class="content__paragraph">Amet in elementum nulla scelerisque dui, egestas at. Elit
+                            consectetur turpis elementum amet vitae et etiam nec. Varius volutpat hac adipiscing
+                            tincidunt pretium.</p>
+                    </div>
+                    <div class="download__app">
+                        <div class="download__app--google">
+
+                            <img src="./assets/img/google.png" alt="Icon Google Play">
+
+                            <div>
+                                <span>GET IT ON</span>
+                                <h4>Google Play</h4>
+                            </div>
+                        </div>
+                        <div class="download__app--store">
+
+                            <img src="./assets/img/apple.png" alt="Icon apple">
+
+                            <div>
+                                <span>Download on the</span>
+                                <h4>App Store</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image__notifications" data-aos="fade-left" data-aos-duration="1200">
+                    <img src="./assets/img/notifications.png" alt="Image section notifications">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="Contato">
+        <div class="banner__footer">
+            <div class="contact__container">
+                <div>
+                    <h4>Contato</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi quis euismod ultrices.
+                    </p>
+                </div>
+                <form action="#">
+                    <input type="text" placeholder="Seu melhor e-mail">
+                    <button>Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Rachi - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
