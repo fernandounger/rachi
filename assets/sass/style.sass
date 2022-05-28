@@ -1,0 +1,475 @@
+@use 'variables'
+@use 'mixins'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    text-decoration: none
+    list-style: none
+    text-decoration: none
+    border: none
+    outline: 0
+    
+
+::-webkit-scrollbar
+  width: 10px
+
+::-webkit-scrollbar-thumb 
+  background-color: variables.$blue-color
+  border-radius:10px 
+  border: 2px solid transparent
+
+body
+    max-width: 1440px
+    margin: 0 auto
+    overflow-x: hidden
+    background-color: variables.$white-color--200
+    
+
+    header
+        position: sticky
+        top: 0
+        z-index: 100
+        background-color: variables.$white-color--200
+        padding: 1.2rem 1rem
+
+        .header__container
+            @include mixins.container
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            .header__logo
+                position: relative
+                z-index: 100
+
+            .header__logo a
+                font: 700 1.5rem Sora, sans-serif
+                color: variables.$gray-color--200
+
+            .header__menu
+                display: flex
+                gap: 5rem
+                align-items: center
+
+                @include mixins.mobile
+                    flex-direction: column
+                    position: fixed
+                    top: 0
+                    margin: 0
+                    left: -100%
+                    width: 100%
+                    height: 100vh
+                    z-index: 99
+                    padding: 100px 20px
+                    transition: .3s ease-in-out
+                    background: variables.$white-color
+
+
+                .menu__item a
+                    color: variables.$gray-color
+                    font-weight: 500
+                    font-family: 'Inter', sans-serif
+                    font-size: clamp(0.875rem, 0.7679rem + 0.4762vw, 1.125rem)
+                    position: relative
+
+                    &:after
+                        content: ''
+                        position: absolute
+                        width: 100%
+                        transform: scaleX(0)
+                        height: 2px
+                        bottom: 0
+                        left: 0
+                        background-color: variables.$gray-color
+                        transform-origin: bottom right
+                        transition: transform 0.5s ease-out
+
+                    &:hover
+                        &:after
+                            transform: scaleX(1)
+                            transform-origin: bottom left
+
+            .menuhamburguer
+                display: none
+                position: relative
+                cursor: pointer
+
+                @include mixins.mobile
+                    z-index: 999
+                    display: block
+
+            .active
+                left: 0
+
+    section
+        padding: 1.8rem 1rem
+
+        .working__container
+         @include mixins.container
+         @include mixins.flex-center
+         justify-content: space-between
+
+         @include mixins.mobile
+          flex-wrap: wrap
+          gap:2rem
+          justify-content: center     
+        
+         .content__texts
+            display: flex
+            flex-direction: column
+            gap: 1.4rem
+            
+
+         h1 , h2
+            font-family: 'Sora', sans-serif
+            font-weight: 700
+            color: variables.$gray-color--200
+            font-size: clamp(1.5rem, 1.0364rem + 2.1818vw, 3rem)
+
+         .working__btn
+            text-align: center
+            background: variables.$blue-color
+            color: variables.$white-color
+            box-shadow: 1px 3px 4px rgba(19, 125, 224, 0.5)
+            padding: 14px 36px
+            border-radius: 50px
+            font-size: 16px
+            font-weight: 600
+            width: fit-content
+            font-family: 'Inter', sans-serif
+            cursor: pointer
+
+            @include mixins.mobile
+                padding: 12px 16px
+                font-size: 14px
+                font-weight: 500
+
+         .working__image
+            max-width: 500px
+
+            img
+                width: 100%
+
+    .works__container
+        text-align: center
+        padding: 4rem 0
+        @include mixins.container
+
+        .works__title h2
+            font-size: clamp(1.5rem, 1.0446rem + 2.0238vw, 2.5625rem)
+            font-family: 'Sora', sans-serif
+            font-weight: 700
+            color: variables.$gray-color--200
+
+        .works__card
+            padding: 4.5rem 0
+            @include mixins.flex-center
+            flex-wrap: wrap
+            gap: 3rem
+            justify-content: space-evenly
+
+        .card
+            max-width: 220px
+            padding: 1rem 0
+            position: relative
+            z-index:99
+
+            .card__image
+                margin-bottom: 1.2rem
+
+            .card__title
+                font-family: 'Sora', sans-serif
+                color: variables.$gray-color--200
+                margin-bottom: 0.4rem
+
+            .card__paragraph
+                font-family: 'Inter', sans-serif
+                font-weight: 400
+                font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem)
+                color: variables.$gray-color
+
+    .plans__container
+        padding: 2rem 0
+        @include mixins.container
+        gap:2rem
+
+        .content__text
+            text-align: center
+            max-width: 550px
+            margin: 0 auto
+
+        .content__text h3
+            
+            font-size: clamp(1.5rem, 1.0446rem + 2.0238vw, 2.5625rem)
+            font-family: 'Sora', sans-serif
+            font-weight: 700
+            color: variables.$gray-color--200
+            margin-bottom: 1rem
+
+        .content__text p
+            
+            font-weight: 400
+            color: variables.$gray-color
+            font-family: 'Inter', sans-serif
+            line-height: 25px
+            font-size: clamp(0.875rem, 0.7946rem + 0.3571vw, 1.0625rem)
+        
+        .plans__cards
+            padding: 5rem 0
+            @include mixins.flex-center
+            flex-wrap: wrap
+            gap: 1rem
+            justify-content: space-around
+
+            .card
+                @include mixins.flex-center
+                flex-direction: column
+                color: variables.$gray-color--200
+                height: 470px
+                justify-content: space-around
+                max-width: 340px
+                padding: 35px
+                text-align: center
+                border-radius: 8px
+
+                &:hover
+                    transition: 0.3s ease-in-out
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px
+
+                h4
+                    font-family: 'Sora', sans-serif
+                    font-weight: 600
+                    font-size: 24px
+                
+                .card__price
+                    display: flex
+                    font-family: 'Roboto', sans-serif
+                    font-weight: 700
+
+                    .card__price--coin
+                        font-size: 20px
+                        margin-top: 10px
+                    .card__price--value
+                        font-size: 50px
+                    .card__price--month
+                        margin-top: 20px
+                        font-size: 26px
+
+                .card__paragraph
+                    width: 300px
+                    font-family: 'Inter', sans-serif
+                    font-weight: 400
+                    color: variables.$gray-color
+                    font-size: clamp(1rem, 0.9464rem + 0.2381vw, 1.125rem)
+
+                .card__btnplan
+                    color: variables.$white-color
+                    border-radius: 50px
+                    background-color: variables.$blue-color
+                    box-shadow: 1px 3px 10px rgba(17, 37, 56, 0.5)
+                    padding: 12px 80px
+                    font-size: 16px
+                    font-weight: 600
+                    font-family: 'Inter', sans-serif
+                    cursor: pointer
+                    border: 1px
+                    transition: 400ms ease-in-out
+
+                    &:hover
+                        transition: 400ms  ease-in-out
+                        background: transparent
+                        color: variables.$gray-color--200
+                        border: 1px solid variables.$gray-color--200
+
+            .card-preferred
+                    color: variables.$white-color
+                    background: variables.$gray-color--200
+
+                    h4
+                        font-size: clamp(1.5rem, 1.2857rem + 0.9524vw, 2rem)
+                        margin-bottom: 1rem
+
+                    span
+                        font-weight: 500
+                        border-radius: 15px
+                        font-family: 'Inter', sans-serif
+                        padding: 5px 32px
+                        font-size: 14px
+                        letter-spacing: 0.2em
+                        background-color: variables.$blue-color
+
+                    .card__paragraph
+                        color: variables.$gray-color--light
+
+                    .card__btnplan
+                        &:hover
+                            background: transparent
+                            color: variables.$white-color
+                            border: 1px solid variables.$white-color
+                            
+    
+    .download__container
+        @include mixins.container
+        @include mixins.flex-center
+        justify-content: space-between
+        padding: 3rem 0
+
+        @include mixins.mobile
+         gap:2rem
+         justify-content: center
+         flex-wrap: wrap
+            
+        .content__title
+            font-size: clamp(1.5rem, 1.2857rem + 0.9524vw, 2rem)
+            font-family: 'Sora', sans-serif
+            color: variables.$gray-color--200
+            font-weight: 600
+
+            @include mixins.mobile-text
+                text-align: center
+
+        
+        .content__paragraph
+            max-width: 444px
+            font-family: 'Inter', sans-serif
+            font-weight: 400
+            font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem)
+            color: variables.$gray-color
+            line-height: 26px
+            margin: 28px 0
+
+            @include mixins.mobile
+             text-align: center
+             margin: 28px auto
+                
+
+        .download__app
+            @include mixins.flex-center
+            gap: 2rem
+
+            @include mixins.mobile
+             justify-content: center
+
+        .download__app--google , .download__app--store
+            @include mixins.flex-center
+            padding: 1.8rem 1.2rem
+            max-height: 60px
+            background: variables.$gray-color--200
+            color: variables.$white-color
+            border-radius: 10px
+            width: fit-content
+            justify-content: center
+            font-family: 'Inter', sans-serif
+            gap:1rem
+            
+
+            @include mixins.mobile-text
+             justify-content: center
+             padding: 0.8rem 1.2rem
+
+            img
+                max-width: 25px
+            span
+                font-size: clamp(0.5625rem, 0.4821rem + 0.3571vw, 0.75rem)
+            h4
+                font-weight: 400
+                font-size: clamp(0.6875rem, 0.2857rem + 1.7857vw, 1.625rem)
+
+        .image__notifications
+            max-width: 450px
+
+            @include mixins.mobile-text
+             display: none
+
+            img
+                width: 100%
+
+
+    .banner__footer
+       @include mixins.bg-img('contact.png')
+       display: flex
+       justify-content: center
+       align-items: center
+       flex-direction: column
+       text-align: center
+
+    .contact__container
+
+        @include mixins.flex-center
+        flex-direction: column
+        gap:5rem
+        
+        h4
+            color: variables.$white-color
+            font-size: clamp(1.5rem, 1.0714rem + 1.9048vw, 2.5rem)
+            font-family: 'Sora', sans-serif
+            font-weight: 600
+            margin-bottom: 1rem
+
+        p
+            font-weight: 400
+            color: variables.$gray-color--light
+            font-family: 'Inter', sans-serif
+            line-height: 25px
+            max-width: 450px
+            font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem)
+
+        form
+            @include mixins.flex-center
+            padding: 1rem
+            gap:2rem
+            width: 100%
+            @include mixins.mobile-text
+             flex-direction: column
+
+        input
+            padding: 10px 0
+            background-color: transparent
+            border-bottom: 1px solid variables.$white-color
+            color: variables.$gray-color--light
+            width: 100%
+            font-size: 1rem
+            font-family: 'Inter', sans-serif
+            
+        input:focus
+            border-bottom: 1px solid variables.$blue-color
+            transition: 0.2s ease-in-out
+
+        input:focus::placeholder
+            transition: 0.4s ease-in-out
+            font-size: 15px
+                        
+        input::placeholder
+            
+            font-size: 18px
+            color: variables.$gray-color--light
+            font-weight: 500
+            transition: 0.3s ease-in-out
+                
+        button
+            background: variables.$blue-color
+            color: variables.$white-color
+            box-shadow: 1px 3px 4px rgba(19, 125, 224, 0.5)
+            padding: 8px 32px
+            border-radius: 50px
+            font-size: 16px
+            font-weight: 500
+            cursor: pointer
+            font-family: 'Inter', sans-serif
+
+            @include mixins.mobile-text
+             width: 100%
+
+
+    .footer
+        font-family: 'Sora', sans-serif
+        font-weight: 400
+        color: variables.$gray-color--200
+        padding: 20px
+        font-size: clamp(0.875rem, 0.8214rem + 0.2381vw, 1rem)
+        text-align: center
+
+       
+
