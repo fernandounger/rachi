@@ -6,5 +6,5 @@
     * HTML
     * CSS
     * SASS
-    * JavaSript
+    * JavaScript
     * AOS
